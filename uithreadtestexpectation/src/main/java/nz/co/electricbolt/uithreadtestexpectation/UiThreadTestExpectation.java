@@ -98,12 +98,13 @@ public class UiThreadTestExpectation {
     }
 
     /**
-     * waitForExpectationsWithTimeout() creates a point of synchronization in the flow of a
-     * test. Only one waitForExpectationsWithTimeout() can be active at any given time, but
-     * multiple discrete sequences of { expectations -> wait } can be chained together.
-     *
-     * waitForExpectationsWithTimeout:handler: runs the main Looper while handling events until
-     * all expectations are fulfilled or the timeout is reached.
+     * waitForExpectationsWithTimeout()` runs the main Looper to handle events until all expectations
+     * are fulfilled or the timeout is reached. When waitForExpectationsWithTimeout() returns, any
+     * expectations that were created and associated with the test case are automatically
+     * disassociated, and will not affect any further invocations of waitForExpectationsWithTimeout().
+     * Only one waitForExpectationsWithTimeout() can be active at any given time, but it is
+     * permissible to chain together multiple { expectations -> wait } calls in either a single test
+     * case or multiple test cases.
      *
      * @param seconds The amount of time in seconds within which all expectations created with
      *                expectationWithDescription() must be fulfilled.

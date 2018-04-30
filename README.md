@@ -22,6 +22,19 @@ new Handler(Looper.getMainLooper()).post(() -> { ... });
 
 then you can test these using `UiThreadTestExpectation`. The usual approach of using `CountDownLatch` in these situations doesn't work as `CountDownLatch.await()` blocks the main thread, and no messages on the main `Looper` are processed causing the the test to hang forever. `UiThreadTestExpectation` works around this by continuing to process messages on the main `Looper`, whilst simultanously checking if all expectations have been fulfilled and/or timed out.
 
+## Distribution
+
+* Minimum SDK 15 (4.0.3 Ice cream sandwich)
+* Target SDK 27
+* Developed with Android Studio 3.1
+* Friendly BSD-2 license
+
+## Building instructions
+
+To clean: `./gradlew clean`
+	
+To build: `./gradlew assembleRelease`. The AAR file will be output in `./uithreadtestexpectation/build/outputs/aar/uithreadtestexpectation-release.aar`
+
 ## Class UiThreadTestExpectation
 
 #### UiThreadTestExpectation.TestExpectation expectationWithDescription(String)

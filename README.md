@@ -60,7 +60,7 @@ static void waitForExpectationsWithTimeout(double seconds) throws UiThreadTestEx
 public void fulfill() throws IllegalStateException;
 ```
 
-Call `fulfill()` to mark an expectation as having been met. You may not call `fullfill()` on a expectation if it has already been fulfilled.
+Call `fulfill()` to mark an expectation as having been met. You may not call `fulfill()` on a expectation if it has already been fulfilled.
 
 **throws** *IllegalStateException* if the expectation has already been fulfilled.
 

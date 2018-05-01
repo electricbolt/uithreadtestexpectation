@@ -90,7 +90,7 @@ public class RSAKeyGeneratorTests {
 
     @Test
     @UiThreadTest
-    public void testKeyStore() throws Exception {
+    public void testGenerate() throws Exception {
         // Create asynchronous expectation and associate with the current test case.
         UiThreadTestExpectation.TestExpectation ex = UiThreadTestExpectation.expectationWithDescription("GenerateKeyPair");
 

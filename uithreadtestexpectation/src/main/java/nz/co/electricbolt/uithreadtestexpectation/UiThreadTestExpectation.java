@@ -38,6 +38,7 @@ public class UiThreadTestExpectation {
 
         /**
          * The string displayed in the console log to help diagnose failures.
+         * @return description for diagnostic purposes.
          */
 
         public String getDescription() {
@@ -103,7 +104,7 @@ public class UiThreadTestExpectation {
      * expectations that were created and associated with the test case are automatically
      * disassociated, and will not affect any further invocations of waitForExpectationsWithTimeout().
      * Only one waitForExpectationsWithTimeout() can be active at any given time, but it is
-     * permissible to chain together multiple { expectations -> wait } calls in either a single test
+     * permissible to chain together multiple { expectations, wait } calls in either a single test
      * case or multiple test cases.
      *
      * @param seconds The amount of time in seconds within which all expectations created with

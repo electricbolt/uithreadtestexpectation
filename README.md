@@ -28,8 +28,17 @@ then you can test these using `UiThreadTestExpectation`. The usual approach of u
 * Target SDK 27
 * Developed with Android Studio 3.1
 * Friendly BSD-2 license
+* Hosted on JCenter
+
+## JCenter
+
+`uithreadtestexpectation` is hosted in JCenter. In the `dependencies` section of your modules `build.gradle` file add the following:
+
+`androidTestImplementation "nz.co.electricbolt:uithreadtestexpectation:1.0.1"`
 
 ## Building instructions
+
+If you need to manually build `uithreadtestexpectation` to generate an AAR file:
 
 To clean: `./gradlew clean`
 	

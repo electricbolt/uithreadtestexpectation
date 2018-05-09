@@ -22,6 +22,18 @@ new Handler(Looper.getMainLooper()).post(() -> { ... });
 
 then you can test these using `UiThreadTestExpectation`. The usual approach of using `CountDownLatch` in these situations doesn't work as `CountDownLatch.await()` blocks the main thread, and no messages on the main `Looper` are processed causing the the test to hang forever. `UiThreadTestExpectation` works around this by continuing to process messages on the main `Looper`, whilst simultanously checking if all expectations have been fulfilled and/or timed out.
 
+## Android P notes
+
+Tested on Android P beta - continues to work as expected but Android prints:
+```
+Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (light greylist, reflection)
+Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (light greylist, reflection)
+Accessing hidden field Landroid/os/Message;->next:Landroid/os/Message; (light greylist, reflection)
+```
+to logcat when `UiThreadTestExpectation.waitForExpectationsWithTimeout()` is executed.
+
+Bug filed with Android team to allow continued use of these greylist fields.
+
 ## Distribution
 
 * Minimum SDK 15 (4.0.3 Ice cream sandwich)

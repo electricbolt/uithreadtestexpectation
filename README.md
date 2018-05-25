@@ -32,7 +32,7 @@ Accessing hidden field Landroid/os/Message;->next:Landroid/os/Message; (light gr
 ```
 to logcat when `UiThreadTestExpectation.waitForExpectationsWithTimeout()` is executed.
 
-Bug filed with Android team to allow continued use of these greylist fields.
+Bug filed with Android team to allow continued use of these light greylist fields during instrumented testing only.
 
 ## Distribution
 
